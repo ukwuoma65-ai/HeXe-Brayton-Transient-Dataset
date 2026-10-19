@@ -1,0 +1,64 @@
+========================================================================================================
+STEP 6 - PAPER-1 PRODUCTION-V1 DATASET GENERATION
+========================================================================================================
+
+Project root: D:\PHD\HeXe_Space_Reactor_PINO
+Production directory: D:\PHD\HeXe_Space_Reactor_PINO\step6_dataset\production_v1
+
+FROZEN PROVENANCE
+========================================================================================================
+Manifest SHA256       : 702c33caa6a2812db08756f9b1351c3cd1668a4aa41e33c01c08ad38f7255c1e
+Contract SHA256       : 46eeec2a9c7b46ec2a1e83ce2f7a743d1d3a5dc60f8add3703b570008295a0b6
+File-74 SHA256        : 4c5da48c6451da4a13e2aa794bc3ffc2822a28aaf42b9184a9775af752aecdeb
+File-72 SHA256        : ae42492719f82a61861501940e477abfb8290b71cf7df73fb4d4d10260d2bc3a
+File-173 SHA256       : c7c202b2a9acfb46882e7c7e727dd0653f7adf7aa22f76d18334eb151d722121
+File-174 SHA256       : e382239b9135cd5fe9fbbb05ddb6cdbdf75ba30a9874046eeae54b7fa38a890a
+
+
+DATASET STRUCTURE
+========================================================================================================
+Production cases      : 2177
+STEP cases            : 1088
+RAMP cases            : 1088
+Global points/case    : 601
+STEP event points     : 1021
+Dynamic state targets : 10
+Auxiliary fields      : 9
+Raw dtype             : float64
+
+
+GENERATION STATUS
+========================================================================================================
+Complete cases        : 2177
+Failed cases          : 0
+Pending cases         : 0
+Generation complete   : True
+
+
+PRODUCTION RESPONSE RANGES
+========================================================================================================
+Transport Tmin [K]       : 662.249568
+Transport Tmax [K]       : 1187.353079
+Worst upper margin [K]    : 12.646921
+Normalized power min/max  : 0.100080447 / 3.02383542
+Fuel T min/max [K]        : 714.593494 / 1318.945532
+Bulk T min/max [K]        : 662.249279 / 1187.353152
+Accumulated case time [h] : 1.194
+
+
+STEP-6 PRODUCTION GENERATION GATE
+========================================================================================================
+PASS  All 2,177 frozen Production-V1 manifest cases were generated.
+PASS  No failed trajectory remains.
+PASS  No pending trajectory remains.
+PASS  Production arrays and per-case metrics have been written.
+
+GENERATION STATUS: COMPLETE
+
+IMPORTANT:
+Dataset generation is complete, but Step 6 is not formally closed until File 175 performs the final production dataset QA/integrity gate.
+
+NEXT: FILE 175 - FINAL PRODUCTION DATASET QA
+
+========================================================================================================
+STATUS: STEP-6 PRODUCTION-V1 GENERATOR COMPLETE

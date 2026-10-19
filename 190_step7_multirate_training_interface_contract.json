@@ -1,0 +1,85 @@
+{
+    "script": "190_step7_multirate_training_interface_gate.py",
+    "status": "MODEL_B_TRAINING_INTERFACE_VERIFIED",
+    "model": "Dual-Resolution Coordinate DeepONet",
+    "dataset": "Production-V1",
+    "dataset_cases": 2177,
+    "global_points": 601,
+    "event_cases": 1088,
+    "event_points": 1021,
+    "state_dimension": 10,
+    "partition_counts": {
+        "TRAIN": 1025,
+        "VALIDATION": 256,
+        "ID_TEST": 256,
+        "OOD_NEG_TEST": 256,
+        "OOD_POS_TEST": 256,
+        "STRESS_TEST": 128
+    },
+    "train_cases": 1025,
+    "train_event_cases": 512,
+    "normalization": {
+        "source": "File 179",
+        "fitting_partition": "TRAIN",
+        "reactivity_mean": -7.65684426099519e-09,
+        "reactivity_std": 0.0003437671683281381,
+        "state_mean": [
+            1.0015477196197906,
+            48622.23941158086,
+            130802.78050996008,
+            23817.474111463747,
+            27157.844475416234,
+            4355.204207718724,
+            587.932937270777,
+            1057.3359866094054,
+            966.1156222645039,
+            966.0526275968496
+        ],
+        "state_std": [
+            0.18555394364745903,
+            7322.86366958708,
+            22877.417065773305,
+            4386.693540966816,
+            5025.972035411059,
+            806.7348591921312,
+            108.92183891554278,
+            50.669713900085405,
+            43.59564596020182,
+            45.01611960785667
+        ],
+        "validation_independent": false,
+        "test_independent": false,
+        "ood_independent": false
+    },
+    "query_coordinates": {
+        "global": "normalized 0 to 1",
+        "event": "normalized 0 to 1"
+    },
+    "operator": {
+        "input": "external reactivity history",
+        "global_branch_dimension": 601,
+        "event_branch_dimension": 1021,
+        "query_dimension": 1,
+        "output_dimension": 10
+    },
+    "training_objective": {
+        "type": "data-only supervised baseline",
+        "loss": "MSE",
+        "physics_loss": false
+    },
+    "tests": {
+        "dataset_shapes": "PASS",
+        "time_coordinates": "PASS",
+        "partition_counts": "PASS",
+        "case_id_ordering": "PASS",
+        "event_partition_mapping": "PASS",
+        "train_only_normalization": "PASS",
+        "global_batch": "PASS",
+        "event_batch": "PASS",
+        "finite_values": "PASS",
+        "model_forward": "PASS",
+        "data_only_loss": "PASS"
+    },
+    "frozen_data_modified": false,
+    "frozen_architecture_modified": false
+}

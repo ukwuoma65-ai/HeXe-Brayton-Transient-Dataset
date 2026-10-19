@@ -1,0 +1,23 @@
+{
+  "dataset": "PAPER1_PRODUCTION_V1",
+  "production_manifest_sha256": "702c33caa6a2812db08756f9b1351c3cd1668a4aa41e33c01c08ad38f7255c1e",
+  "production_contract_sha256": "46eeec2a9c7b46ec2a1e83ce2f7a743d1d3a5dc60f8add3703b570008295a0b6",
+  "reference_solver_sha256": "4c5da48c6451da4a13e2aa794bc3ffc2822a28aaf42b9184a9775af752aecdeb",
+  "file72_sha256": "ae42492719f82a61861501940e477abfb8290b71cf7df73fb4d4d10260d2bc3a",
+  "file173_case_generator_sha256": "c7c202b2a9acfb46882e7c7e727dd0653f7adf7aa22f76d18334eb151d722121",
+  "file174_generator_sha256": "e382239b9135cd5fe9fbbb05ddb6cdbdf75ba30a9874046eeae54b7fa38a890a",
+  "total_cases": 2177,
+  "step_cases": 1088,
+  "ramp_cases": 1088,
+  "global_points": 601,
+  "step_event_points": 1021,
+  "state_count": 10,
+  "auxiliary_count": 9,
+  "raw_dtype": "float64",
+  "status_encoding": {
+    "pending": 0,
+    "complete": 1,
+    "failed": -1
+  },
+  "created_utc": "2026-09-29T08:11:08.077238+00:00"
+}

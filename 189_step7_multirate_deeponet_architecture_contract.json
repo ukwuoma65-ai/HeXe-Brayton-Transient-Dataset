@@ -1,0 +1,43 @@
+{
+    "script": "189_step7_multirate_deeponet_architecture_gate.py",
+    "step": 7,
+    "source_contract": "188_step7_multirate_operator_design_contract.json",
+    "device": "cuda",
+    "trainable_parameters": 499594,
+    "forward_tests": {
+        "global": "PASS",
+        "event": "PASS",
+        "coordinate_normalization": "PASS"
+    },
+    "architecture": {
+        "status": "MODEL_B_ARCHITECTURE_FROZEN",
+        "model_name": "Dual-Resolution Coordinate DeepONet",
+        "role": "Data-only multi-rate baseline",
+        "global_branch": {
+            "input_dimension": 601,
+            "hidden_dimension": 256,
+            "latent_dimension": 128,
+            "activation": "Tanh"
+        },
+        "event_branch": {
+            "input_dimension": 1021,
+            "hidden_dimension": 256,
+            "latent_dimension": 128,
+            "activation": "Tanh"
+        },
+        "trunk": {
+            "input_dimension": 1,
+            "input": "Physical query time normalized within view",
+            "hidden_dimension": 128,
+            "latent_dimension": 128,
+            "activation": "Tanh"
+        },
+        "fusion": "Elementwise branch-trunk latent multiplication",
+        "output_head": {
+            "input_dimension": 128,
+            "output_dimension": 10
+        },
+        "physics_loss": false,
+        "normalization": "Training-only data normalization; coordinate normalization performed internally"
+    }
+}

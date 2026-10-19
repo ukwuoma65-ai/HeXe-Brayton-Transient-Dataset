@@ -1,0 +1,175 @@
+==========================================================================================================
+STEP 6 - FINAL PAPER-1 PRODUCTION-V1 DATASET QA / CLOSURE GATE
+==========================================================================================================
+
+Project root        : D:\PHD\HeXe_Space_Reactor_PINO
+Production directory: D:\PHD\HeXe_Space_Reactor_PINO\step6_dataset\production_v1
+
+PRODUCTION DATASET
+==========================================================================================================
+Cases                    : 2177
+STEP_HOLD cases           : 1088
+LINEAR_RAMP_HOLD cases    : 1088
+Global state shape        : (2177, 601, 10)
+STEP event state shape    : (1088, 1021, 10)
+RAMP anchor state shape   : (1088, 2, 10)
+Primary PINO targets      : 10
+Auxiliary cycle fields    : 9
+
+
+PARTITIONS
+==========================================================================================================
+TRAIN               : 1025
+VALIDATION          : 256
+ID_TEST             : 256
+OOD_NEG_TEST        : 256
+OOD_POS_TEST        : 256
+STRESS_TEST         : 128
+
+Partition leakage cases   : 0
+Duplicate input cases     : 0
+
+
+NUMERICAL / STORAGE INTEGRITY
+==========================================================================================================
+Baseline maximum drift        : 0.000000000000e+00
+Global initial-state error    : 0.000000000000e+00
+STEP local initial-state error: 0.000000000000e+00
+RAMP onset-state error        : 0.000000000000e+00
+Global reactivity max error   : 4.336808689942e-19
+STEP local input max error    : 0.000000000000e+00
+RAMP anchor-time max error    : 0.000000000000e+00
+RAMP anchor-input max error   : 0.000000000000e+00
+Auxiliary spot max abs error  : 0.000000000000e+00
+
+
+PRODUCTION RESPONSE RANGE
+==========================================================================================================
+Normalized power : 0.100080447 to 3.023835421
+Fuel T [K]       : 714.593494 to 1318.945532
+Bulk T [K]       : 662.249279 to 1187.353152
+No-response disturbed cases: 0
+
+
+FILE-72 TRANSPORT SUPPORT
+==========================================================================================================
+Frozen support range [K] : 400.000 to 1200.000
+Observed Tmin [K]        : 662.249568
+Observed Tmax [K]        : 1187.353079
+Worst upper margin [K]   : 12.646921
+
+NOTE:
+The reported fuel-temperature maximum may exceed 1200 K without violating this gate. The 400-1200 K support restriction applies to temperatures actually passed to the File-72 He-Xe transport-property functions, not to the reactor solid fuel temperature.
+
+
+TARGET / AUXILIARY VARIABILITY
+==========================================================================================================
+PRIMARY_STATE     0 normalized_reactor_power                                   span=2.92375497 VARYING
+PRIMARY_STATE     1 precursor_group_1                                          span=98667.8586 VARYING
+PRIMARY_STATE     2 precursor_group_2                                          span=331307.873 VARYING
+PRIMARY_STATE     3 precursor_group_3                                          span=68371.4422 VARYING
+PRIMARY_STATE     4 precursor_group_4                                          span=79075.8644 VARYING
+PRIMARY_STATE     5 precursor_group_5                                          span=12710.0817 VARYING
+PRIMARY_STATE     6 precursor_group_6                                          span=1716.28035 VARYING
+PRIMARY_STATE     7 fuel_temperature_K                                         span=604.352039 VARYING
+PRIMARY_STATE     8 block_temperature_K                                        span=513.527577 VARYING
+PRIMARY_STATE     9 bulk_coolant_temperature_K                                 span=525.103874 VARYING
+AUXILIARY_CYCLE   0 cycle[0]                                                   span=589.704884 VARYING
+AUXILIARY_CYCLE   1 cycle[1].core_inlet_temperature                            span=460.502863 VARYING
+AUXILIARY_CYCLE   2 cycle[1].recuperator.T_cold_out                            span=460.502863 VARYING
+AUXILIARY_CYCLE   3 cycle[1].recuperator.T_hot_out                             span=10.4335973 VARYING
+AUXILIARY_CYCLE   4 cycle[1].recuperator.heat_transfer                         span=792090.001 VARYING
+AUXILIARY_CYCLE   5 cycle[1].turbine.T_out_actual                              span=470.936461 VARYING
+AUXILIARY_CYCLE   6 cycle[1].turbine.T_out_isentropic                          span=464.649291 VARYING
+AUXILIARY_CYCLE   7 cycle[1].turbine.shaft_power                               span=204288.156 VARYING
+AUXILIARY_CYCLE   8 cycle[1].turbine.specific_work                             span=61718.4761 VARYING
+
+
+FINAL STEP-6 CLOSURE GATES
+==========================================================================================================
+PASS  generation_report_complete
+PASS  progress_total_2177
+PASS  progress_complete_2177
+PASS  progress_failed_zero
+PASS  progress_pending_zero
+PASS  fingerprint_production_manifest_sha256
+PASS  fingerprint_production_contract_sha256
+PASS  fingerprint_reference_solver_sha256
+PASS  fingerprint_file72_sha256
+PASS  fingerprint_file173_case_generator_sha256
+PASS  fingerprint_file174_generator_sha256
+PASS  manifest_hash_matches_contract
+PASS  manifest_case_count
+PASS  unique_case_ids
+PASS  partition_counts
+PASS  step_case_count
+PASS  ramp_case_count
+PASS  baseline_case_count
+PASS  no_partition_leakage
+PASS  no_duplicate_input_cases
+PASS  global_time_grid
+PASS  event_time_grid
+PASS  reference_state_shape
+PASS  case_id_mapping
+PASS  state_name_mapping
+PASS  auxiliary_name_mapping
+PASS  step_index_array
+PASS  ramp_index_array
+PASS  global_to_step_mapping
+PASS  global_to_ramp_mapping
+PASS  shape_global_state
+PASS  dtype_global_state_float64
+PASS  shape_global_reactivity
+PASS  dtype_global_reactivity_float64
+PASS  shape_global_auxiliary
+PASS  dtype_global_auxiliary_float64
+PASS  shape_step_event_state
+PASS  dtype_step_event_state_float64
+PASS  shape_step_event_reactivity
+PASS  dtype_step_event_reactivity_float64
+PASS  shape_ramp_anchor_time
+PASS  dtype_ramp_anchor_time_float64
+PASS  shape_ramp_anchor_state
+PASS  dtype_ramp_anchor_state_float64
+PASS  shape_ramp_anchor_reactivity
+PASS  dtype_ramp_anchor_reactivity_float64
+PASS  all_case_status_complete
+PASS  generation_metrics_finite
+PASS  finite_global_state
+PASS  finite_global_reactivity
+PASS  finite_global_auxiliary
+PASS  finite_step_event_state
+PASS  finite_step_event_reactivity
+PASS  finite_ramp_anchor_time
+PASS  finite_ramp_anchor_state
+PASS  finite_ramp_anchor_reactivity
+PASS  global_initial_states
+PASS  step_event_initial_states
+PASS  ramp_onset_states
+PASS  exact_baseline_preserved
+PASS  global_reactivity_histories
+PASS  step_event_reactivity
+PASS  ramp_anchor_times_and_inputs
+PASS  transport_lower_gate
+PASS  transport_upper_gate
+PASS  transport_positive_upper_margin
+PASS  positive_reactor_power
+PASS  positive_temperatures
+PASS  all_disturbances_produce_response
+PASS  all_primary_states_variable
+PASS  all_9_auxiliary_fields_variable
+PASS  auxiliary_cycle_spot_check
+
+Failed closure gates : 0
+
+FINAL PRODUCTION DATASET QA PASS: True
+
+METHODOLOGY STEP 6 STATUS: CLOSED
+
+The Paper-1 transient reference dataset is complete, reproducible, partitioned, provenance-fingerprinted, finite, internally consistent and within the frozen runtime transport-property domain.
+
+NEXT METHODOLOGY STEP:
+STEP 7 - PINO DESIGN AND TRAINING PROTOCOL.
+
+==========================================================================================================
+STATUS: STEP-6 FINAL PRODUCTION DATASET QA COMPLETE

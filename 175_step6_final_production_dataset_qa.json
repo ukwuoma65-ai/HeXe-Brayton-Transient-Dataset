@@ -1,0 +1,151 @@
+{
+  "methodology_step": 6,
+  "dataset": "PAPER1_PRODUCTION_V1",
+  "qa_pass": true,
+  "step6_closed": true,
+  "cases": 2177,
+  "step_cases": 1088,
+  "ramp_cases": 1088,
+  "partition_counts": {
+    "TRAIN": 1025,
+    "VALIDATION": 256,
+    "ID_TEST": 256,
+    "OOD_NEG_TEST": 256,
+    "OOD_POS_TEST": 256,
+    "STRESS_TEST": 128
+  },
+  "global_state_shape": [
+    2177,
+    601,
+    10
+  ],
+  "step_event_state_shape": [
+    1088,
+    1021,
+    10
+  ],
+  "ramp_anchor_state_shape": [
+    1088,
+    2,
+    10
+  ],
+  "transport": {
+    "minimum_K": 662.2495678452559,
+    "maximum_K": 1187.3530786664105,
+    "worst_upper_margin_K": 12.64692133358949,
+    "support_K": [
+      400.0,
+      1200.0
+    ]
+  },
+  "response_ranges": {
+    "normalized_power": [
+      0.10008044671311955,
+      3.0238354205848195
+    ],
+    "fuel_temperature_K": [
+      714.5934935551269,
+      1318.9455324690784
+    ],
+    "bulk_temperature_K": [
+      662.249278554788,
+      1187.3531522908336
+    ]
+  },
+  "integrity_metrics": {
+    "baseline_drift": 0.0,
+    "global_initial_state_max_error": 0.0,
+    "step_initial_state_max_error": 0.0,
+    "ramp_onset_state_max_error": 0.0,
+    "global_reactivity_max_error": 4.336808689942018e-19,
+    "step_event_reactivity_max_error": 0.0,
+    "ramp_anchor_time_max_error": 0.0,
+    "ramp_anchor_reactivity_max_error": 0.0,
+    "auxiliary_spot_max_abs_error": 0.0
+  },
+  "problem_counts": {
+    "partition_leakage": 0,
+    "duplicate_inputs": 0,
+    "global_reactivity_bad_cases": 0,
+    "step_bad_cases": 0,
+    "ramp_bad_cases": 0,
+    "no_response_cases": 0
+  },
+  "gates": {
+    "generation_report_complete": true,
+    "progress_total_2177": true,
+    "progress_complete_2177": true,
+    "progress_failed_zero": true,
+    "progress_pending_zero": true,
+    "fingerprint_production_manifest_sha256": true,
+    "fingerprint_production_contract_sha256": true,
+    "fingerprint_reference_solver_sha256": true,
+    "fingerprint_file72_sha256": true,
+    "fingerprint_file173_case_generator_sha256": true,
+    "fingerprint_file174_generator_sha256": true,
+    "manifest_hash_matches_contract": true,
+    "manifest_case_count": true,
+    "unique_case_ids": true,
+    "partition_counts": true,
+    "step_case_count": true,
+    "ramp_case_count": true,
+    "baseline_case_count": true,
+    "no_partition_leakage": true,
+    "no_duplicate_input_cases": true,
+    "global_time_grid": true,
+    "event_time_grid": true,
+    "reference_state_shape": true,
+    "case_id_mapping": true,
+    "state_name_mapping": true,
+    "auxiliary_name_mapping": true,
+    "step_index_array": true,
+    "ramp_index_array": true,
+    "global_to_step_mapping": true,
+    "global_to_ramp_mapping": true,
+    "shape_global_state": true,
+    "dtype_global_state_float64": true,
+    "shape_global_reactivity": true,
+    "dtype_global_reactivity_float64": true,
+    "shape_global_auxiliary": true,
+    "dtype_global_auxiliary_float64": true,
+    "shape_step_event_state": true,
+    "dtype_step_event_state_float64": true,
+    "shape_step_event_reactivity": true,
+    "dtype_step_event_reactivity_float64": true,
+    "shape_ramp_anchor_time": true,
+    "dtype_ramp_anchor_time_float64": true,
+    "shape_ramp_anchor_state": true,
+    "dtype_ramp_anchor_state_float64": true,
+    "shape_ramp_anchor_reactivity": true,
+    "dtype_ramp_anchor_reactivity_float64": true,
+    "all_case_status_complete": true,
+    "generation_metrics_finite": true,
+    "finite_global_state": true,
+    "finite_global_reactivity": true,
+    "finite_global_auxiliary": true,
+    "finite_step_event_state": true,
+    "finite_step_event_reactivity": true,
+    "finite_ramp_anchor_time": true,
+    "finite_ramp_anchor_state": true,
+    "finite_ramp_anchor_reactivity": true,
+    "global_initial_states": true,
+    "step_event_initial_states": true,
+    "ramp_onset_states": true,
+    "exact_baseline_preserved": true,
+    "global_reactivity_histories": true,
+    "step_event_reactivity": true,
+    "ramp_anchor_times_and_inputs": true,
+    "transport_lower_gate": true,
+    "transport_upper_gate": true,
+    "transport_positive_upper_margin": true,
+    "positive_reactor_power": true,
+    "positive_temperatures": true,
+    "all_disturbances_produce_response": true,
+    "all_primary_states_variable": true,
+    "all_9_auxiliary_fields_variable": true,
+    "auxiliary_cycle_spot_check": true
+  },
+  "failed_gates": [],
+  "hashed_bytes": 308438712,
+  "hash_file": "175_step6_production_v1_file_hashes.json"
+}

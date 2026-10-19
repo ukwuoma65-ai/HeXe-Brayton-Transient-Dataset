@@ -1,0 +1,11 @@
+{
+  "dataset": "PAPER1_PRODUCTION_V1",
+  "total_cases": 2177,
+  "complete_cases": 2177,
+  "failed_cases": 0,
+  "pending_cases": 0,
+  "percent_complete": 100.0,
+  "last_case_id": "PROD_02177",
+  "current_session_elapsed_s": 4309.511789800017,
+  "updated_utc": "2026-09-29T09:22:58.053433+00:00"
+}

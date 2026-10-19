@@ -1,0 +1,29 @@
+# Data Dictionary – HeXe Brayton Transient Dataset v1
+
+## Global arrays (all 2,177 cases)
+- `global_time_s.npy`                  – (601,) physical time [s]
+- `global_reactivity_delta_k_over_k.npy` – (n_cases, 601) external reactivity [Δk/k]
+- `global_state.npy`                   – (n_cases, 601, 10) ten states listed in README
+- `global_auxiliary_cycle.npy`         – derived Brayton quantities (see contract)
+
+## STEP event-local arrays (STEP_HOLD cases only)
+- `step_event_relative_time_s.npy`     – (1021,) time relative to STEP onset [s]
+- `step_event_reactivity_delta_k_over_k.npy`
+- `step_event_state.npy`               – (n_step_cases, 1021, 10)
+
+## State vector order (last dimension = 10)
+0: normalized reactor power  
+1–6: delayed-neutron precursor groups 1–6  
+7: fuel temperature [K]  
+8: structural-block temperature [K]  
+9: bulk-coolant temperature [K]
+
+## Units
+Reactivity: Δk/k  
+Temperatures: kelvin  
+Time: seconds  
+Power: normalized (rated = 1)
+
+## Partitions
+Indices and case IDs are provided inside `production_v1` and the production manifest.  
+Normalization must be taken exclusively from the TRAIN partition.

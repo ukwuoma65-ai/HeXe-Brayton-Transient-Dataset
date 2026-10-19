@@ -1,0 +1,98 @@
+{
+    "script": "188_step7_multirate_operator_design_gate.py",
+    "step": 7,
+    "qa": {
+        "production_cases": 2177,
+        "global_state_shape": [
+            2177,
+            601,
+            10
+        ],
+        "event_state_shape": [
+            1088,
+            1021,
+            10
+        ],
+        "ramp_state_shape": [
+            1088,
+            2,
+            10
+        ],
+        "global_time": {
+            "points": 601,
+            "start_s": 0.0,
+            "end_s": 600.0,
+            "minimum_dt_s": 1.0,
+            "maximum_dt_s": 1.0,
+            "unique_dt_count": 1
+        },
+        "event_time": {
+            "points": 1021,
+            "start_s": 0.0,
+            "end_s": 5.0,
+            "minimum_dt_s": 9.999999999999593e-06,
+            "maximum_dt_s": 0.25,
+            "unique_dt_count": 3
+        },
+        "step_unique_cases": 1088,
+        "ramp_unique_cases": 1088,
+        "all_finite": true,
+        "all_shape_checks": true
+    },
+    "operator_contract": {
+        "status": "MULTI_RATE_FORMULATION_FROZEN",
+        "operator": "Dual-Resolution Coordinate DeepONet",
+        "purpose": "Data-only multi-rate baseline before physics-informed training",
+        "input_function": "External reactivity history delta_k_over_k",
+        "output_dimension": 10,
+        "initial_condition": "Fixed rated Production-V1 initial state",
+        "global_view": {
+            "cases": 2177,
+            "input_points": 601,
+            "time_coordinate": "global_time_s",
+            "time_start_s": 0.0,
+            "time_end_s": 600.0
+        },
+        "event_local_view": {
+            "cases": 1088,
+            "input_points": 1021,
+            "time_coordinate": "step_event_relative_time_s",
+            "time_start_s": 0.0,
+            "time_end_s": 5.0
+        },
+        "ramp_anchor_view": {
+            "cases": 1088,
+            "anchors_per_case": 2,
+            "purpose": "Exact ramp onset/completion state supervision"
+        },
+        "architecture": {
+            "global_branch": "MLP encoder for 601-point global reactivity history",
+            "event_branch": "MLP encoder for 1021-point event-local reactivity history",
+            "trunk": "Coordinate-based MLP receiving query time",
+            "latent_dimension": 128,
+            "output_dimension": 10,
+            "fusion": "Elementwise branch-trunk latent product",
+            "physics_loss": false
+        },
+        "training": {
+            "global_supervision": true,
+            "event_supervision": true,
+            "ramp_anchor_supervision": true,
+            "physics_residual": false,
+            "normalization": "TRAIN-only normalization contract"
+        },
+        "experimental_sequence": {
+            "model_A": "Global single-resolution DeepONet",
+            "model_B": "Dual-Resolution Coordinate DeepONet",
+            "model_C": "Dual-Resolution Physics-Informed DeepONet"
+        },
+        "scope": {
+            "modify_step6_dataset": false,
+            "generate_new_cases": false,
+            "introduce_random_initial_conditions": false,
+            "autonomous_control": false,
+            "fno": "Deferred secondary comparison",
+            "physics_loss": "Deferred until Model B is established"
+        }
+    }
+}
